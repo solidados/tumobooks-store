@@ -8,13 +8,13 @@ const app = express();
 // middleware to parse req.body
 app.use(express.json());
 
-// CRUD Routes:
+//* CRUD Routes:
 app.get('/', (req, res) => {
   console.log(req);
   return res.status(234).send('<h1>Welcome to TuMoBooks App</h1>');
 });
 
-// Route - Create New Book
+//* Route - Create New Book
 app.post('/books', async (req, res) => {
   try {
     if(
@@ -41,7 +41,7 @@ app.post('/books', async (req, res) => {
   }
 });
 
-// Route - Read All Books
+//* Route - Read All Books
 app.get('/books', async (req, res) => {
   try {
     const books = await Book.find({});
@@ -54,6 +54,20 @@ app.get('/books', async (req, res) => {
   catch (err) {
     console.error(err.message);
     res.status(500).send({ message: err.message });
+  }
+});
+
+//* Route - Read Book /:id
+app.get('/books/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const book = await Book.findById(id);
+
+    return res.status(200).json(book);
+  }
+  catch (err) {
+    console.error(err.message);
+    res.status(500).send({message: err.message});
   }
 })
 
