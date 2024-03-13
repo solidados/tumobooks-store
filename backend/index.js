@@ -8,13 +8,13 @@ const app = express();
 // middleware to parse req.body
 app.use(express.json());
 
-// Routes
+// CRUD Routes:
 app.get('/', (req, res) => {
   console.log(req);
   return res.status(234).send('<h1>Welcome to TuMoBooks App</h1>');
 });
 
-// Create a New Book
+// Route - Create New Book
 app.post('/books', async (req, res) => {
   try {
     if(
@@ -38,6 +38,19 @@ app.post('/books', async (req, res) => {
   catch (err) {
     console.error(err.message)
     res.status(500).send({message: err.message})
+  }
+});
+
+// Route - Read All Books
+app.get('/books', async (req, res) => {
+  try {
+    const books = await Book.find({});
+
+    return res.status(200).json(books);
+  }
+  catch (err) {
+    console.error(err.message);
+    res.status(500).send({ message: err.message });
   }
 })
 
