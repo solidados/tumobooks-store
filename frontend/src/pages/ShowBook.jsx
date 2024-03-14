@@ -26,7 +26,7 @@ const ShowBook = () => {
   return (
     <div className="p-4">
       <AppBackButton />
-      <h1 className="text-3xl mt-4 mb-10 block border-b-8">Book Details</h1>
+      <h1 className="text-3xl pb-4 mt-4 mb-10 block border-b-8">Book Details</h1>
       {
         isLoading
           ? ( <AppSpinner /> )
