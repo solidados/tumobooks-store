@@ -49,7 +49,7 @@ const CreateBook = () => {
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="w-full px-4 py-2 border-2 border-gray-600 text-2xl font-light"
+                    className="w-full px-4 py-2 border-2 border-sky-600 text-2xl font-light"
                   />
               </div>
               <div className="mx-4">
@@ -58,7 +58,7 @@ const CreateBook = () => {
                     type="text"
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
-                    className="w-full px-4 py-2 border-2 border-gray-600 text-2xl font-light"
+                    className="w-full px-4 py-2 border-2 border-sky-600 text-2xl font-light"
                   />
               </div>
               <div className="mx-4">
@@ -67,10 +67,10 @@ const CreateBook = () => {
                     type="text"
                     value={publishYear}
                     onChange={(e) => setPublishYear(e.target.value)}
-                    className="w-full px-4 py-2 border-2 border-gray-600 text-2xl font-light"
+                    className="w-full px-4 py-2 border-2 border-sky-600 text-2xl font-light"
                   />
               </div>
-              <button className="mx-4 my-8 p-2 bg-sky-500 text-white" onClick={handleSaveBook}>Save</button>
+              <button className="mx-4 my-8 p-2 bg-sky-300 hover:bg-sky-600 text-white" onClick={handleSaveBook}>Save</button>
             </div>
           )
       }
