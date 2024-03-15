@@ -6,10 +6,17 @@ Here you can save your read books in a database and give your short description 
 ## How to start
 1. Clone this repo to your local machine:  
 ```shell
-$ git clone 
+$ git clone git@github.com:solidados/tumobooks-store.git
 ```
-1. Checkout to branch `prod`  
+2. Checkout to branch `prod`  
 ```shell
 $ git checkout prod
 ```
-2. 
+3. Navigate to `project` folder and run the following script:  
+```shell
+$ npm run install:all
+```
+4. Navigate to `/frontend` folder and run script:  
+```shell
+$ npm run start
+```
