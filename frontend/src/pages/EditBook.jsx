@@ -9,6 +9,7 @@ const EditBook = () => {
   const [ title, setTitle ] = useState('');
   const [ author, setAuthor ] = useState('');
   const [ publishYear, setPublishYear ] = useState('');
+  const [ description, setDescription ] = useState('');
   const [ isLoading, setIsLoading ] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -23,6 +24,7 @@ const EditBook = () => {
         setTitle(res.data.title)
         setAuthor(res.data.author);
         setPublishYear(res.data.publishYear);
+        setDescription(res.data.description);
         setIsLoading(false);
       })
       .catch(err => {
@@ -37,6 +39,7 @@ const EditBook = () => {
       title,
       author,
       publishYear,
+      description,
     };
 
     setIsLoading(true);
@@ -83,12 +86,24 @@ const EditBook = () => {
                 />
               </div>
               <div className="mx-4">
-                <label className="text-l mr-4 text-grey-500 relative top-3 left-3 bg-white px-2 font-light">Published Year</label>
+                <label className="text-l mr-4 text-grey-500 relative top-3 left-3 bg-white px-2 font-light">Published
+                  Year</label>
                 <input
                   type="text"
                   value={publishYear}
                   onChange={(e) => setPublishYear(e.target.value)}
                   className="w-full px-4 py-2 border-2 border-gray-600 text-2xl font-light"
+                />
+              </div>
+              <div className="mx-4">
+                <label
+                  className="text-l mr-4 text-grey-500 relative top-3 left-3 bg-white px-2 font-light">Description</label>
+                <textarea
+                  rows="4"
+                  cols="50"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  className="w-full px-4 py-2 border-2 border-sky-600 text-2xl font-light"
                 />
               </div>
               <button className="mx-4 my-8 p-2 bg-sky-500 text-white" onClick={handleEditBook}>Save</button>

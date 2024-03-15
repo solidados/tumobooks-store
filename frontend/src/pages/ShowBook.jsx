@@ -51,6 +51,10 @@ const ShowBook = () => {
                 <span className="text-l mr-4 text-grey-500">Published Year</span>
                 <span>{book.publishYear}</span>
               </div>
+              <div className="my-2">
+                <span className="text-l mr-4 text-grey-500">Description</span>
+                <span>{book.description}</span>
+              </div>
               <div className="my-0.5 font-light text-gray-500">
                 <span className="text-l mr-4 text-grey-500">Created</span>
                 <span>{new Date(book.createdAt).toDateString()}</span>

@@ -9,6 +9,7 @@ const CreateBook = () => {
   const [ title, setTitle ] = useState('');
   const [ author, setAuthor ] = useState('');
   const [ publishYear, setPublishYear ] = useState('');
+  const [ description, setDescription ] = useState('');
   const [ isLoading, setIsLoading ] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -18,6 +19,7 @@ const CreateBook = () => {
       title,
       author,
       publishYear,
+      description,
     };
 
     setIsLoading(true);
@@ -35,8 +37,6 @@ const CreateBook = () => {
         console.error(err);
       })
   };
-
-  // const handleInputValue = (e, action) => action(e.target.value);
 
   return (
     <div className="p-4">
@@ -71,6 +71,16 @@ const CreateBook = () => {
                     type="text"
                     value={publishYear}
                     onChange={(e) => setPublishYear(e.target.value)}
+                    className="w-full px-4 py-2 border-2 border-sky-600 text-2xl font-light"
+                  />
+              </div>
+              <div className="mx-4">
+                <label className="text-l mr-4 text-grey-500 relative top-3 left-3 bg-white px-2 font-light">Description</label>
+                  <textarea
+                    rows="4"
+                    cols="50"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                     className="w-full px-4 py-2 border-2 border-sky-600 text-2xl font-light"
                   />
               </div>

@@ -27,9 +27,7 @@ const BookModal = ({ book, onClose }) => {
           <h2 className="my-1">{book.author}</h2>
         </div>
         <p className="mt-4">Description</p>
-        <p className="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur cum
-          cupiditate dolor in laboriosam molestiae neque, non obcaecati optio pariatur praesentium quae quasi quos
-          ratione soluta ullam voluptatem. Neque!</p>
+        <p className="mt-2">{book.description}</p>
       </div>
     </div>
   );
