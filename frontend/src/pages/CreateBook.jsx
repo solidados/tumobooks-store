@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSnackbar } from 'notistack';
 import axios from 'axios';
 import AppBackButton from '../components/AppBackButton.jsx';
 import AppSpinner from '../components/AppSpinner.jsx';
@@ -10,6 +11,7 @@ const CreateBook = () => {
   const [ publishYear, setPublishYear ] = useState('');
   const [ isLoading, setIsLoading ] = useState(false);
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleSaveBook = () => {
     const data = {
@@ -24,11 +26,13 @@ const CreateBook = () => {
       .post('http://localhost:5000/books', data)
       .then(() => {
         setIsLoading(false);
+        enqueueSnackbar('New book created successfully', { variant: 'success' })
         navigate('/');
       })
       .catch(err => {
-        console.error(err);
         setIsLoading(false);
+        enqueueSnackbar('Creation failed', { variant: 'error' })
+        console.error(err);
       })
   };
 

@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import AppBackButton from '../components/AppBackButton.jsx';
 import AppSpinner from '../components/AppSpinner.jsx';
+import { useSnackbar } from 'notistack';
 
 const ShowBook = () => {
   const [ book, setBook ] = useState({})
   const [ isLoading, setIsLoading ] = useState(false);
   const { id } = useParams();
+  const { enqueueSnackbar} = useSnackbar();
 
   useEffect(() => {
     setIsLoading(true);
@@ -18,8 +20,9 @@ const ShowBook = () => {
         setIsLoading(false)
       })
       .catch(err => {
+        setIsLoading(false);
+        enqueueSnackbar('Something went wrong', { variant: 'error' })
         console.error(err);
-        setIsLoading(false)
       })
   }, []);
 
