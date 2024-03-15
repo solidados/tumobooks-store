@@ -3,7 +3,7 @@
 This pet-project application was created to store the books you read and liked the most.  
 Here you can save your read books in a database and give your short description to each of them.
 
-## How to start
+## How to start using it?
 1. Clone this repo to your local machine:
 ```shell
 $ git clone git@github.com:solidados/tumobooks-store.git
@@ -43,5 +43,6 @@ You can view, edit, delete each entry. You can achieve the desired results by pr
 > This is a first release and such functionality as:
 > - user login
 > - personalize your entries
-> - filter and search
-    > are about to come in next releases.
+> - filter and search  
+> 
+> are about to come in next releases.
