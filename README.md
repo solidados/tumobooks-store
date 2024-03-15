@@ -43,5 +43,6 @@ You can view, edit, delete each entry. You can achieve the desired results by pr
 > This is a first release and such functionality as:  
 > - user login
 > - personalize your entries
-> - filter and search
+> - filter and search  
+> 
 > are about to come in some of next releases.
