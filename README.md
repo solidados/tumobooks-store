@@ -45,4 +45,4 @@ You can view, edit, delete each entry. You can achieve the desired results by pr
 > - personalize your entries
 > - filter and search  
 > 
-> are about to come in next releases.
+> are about to come in some of next releases.
